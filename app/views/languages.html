@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Test
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    navigation: [
+      {
+        href: "https://gov.uk/government/organisations",
+        text: "Departments"
+      },
+      {
+        href: "https://gov.uk/government/world",
+        text: "Worldwide"
+      },
+      {
+        href: "https://gov.uk/government/how-government-works",
+        text: "How government works"
+      },
+      {
+        href: "https://gov.uk/government/get-involved",
+        text: "Get involved"
+      },
+      {
+        href: "https://gov.uk/search/policy-papers-and-consultations?content_store_document_type%5B%5D=open_consultations&amp;amp;content_store_document_type%5B%5D=closed_consultations",
+        text: "Consultations"
+      },
+      {
+        href: "https://gov.uk/search/research-and-statistics",
+        text: "Statistics"
+      },
+      {
+        href: "https://gov.uk/news-and-communications",
+        text: "News and communications"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+    {
+      text: "Home",
+      href: "#"
+    },
+    {
+      text: "Coronavirus (COVID-19)",
+      href: "#"
+    },
+    {
+      text: "International travel, immigration and repatriation during coronavirus",
+      href: "#"
+    }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Guidance</span>
+      <h1 class="govuk-heading-l">Coming to the UK for seasonal agricultural work on English farms</h1>
+
+      <p class="govuk-body-l">Advice for seasonal agricultural workers coming to England to pick fruit and vegetables on farms, and their employers.</p>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      {{ govukSelect({
+        id: "languages",
+        name: "languages",
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Languages"
+        },
+        items: [
+          {
+            value: "english",
+            text: "English",
+            selected: true
+          },
+          {
+            value: "test1",
+            text: "Беларуская"
+          },
+          {
+            value: "test2",
+            text: "български"
+          },
+          {
+            value: "test3",
+            text: "Polski"
+          },
+          {
+            value: "test4",
+            text: "Română"
+          },
+          {
+            value: "test5",
+            text: "Русский"
+          },
+          {
+            value: "test6",
+            text: "Українська"
+          }
+        ]
+      }) }}
+    </div>
+  </div>
+{% endblock %}
